@@ -60,6 +60,7 @@ static void mangle_contents(struct sk_buff *skb,
 		__skb_trim(skb, skb->len + rep_len - match_len);
 	}
 
+	//could put tether hack here
 	if (nf_ct_l3num((struct nf_conn *)skb_nfct(skb)) == NFPROTO_IPV4) {
 		/* fix IP hdr checksum information */
 		ip_hdr(skb)->tot_len = htons(skb->len);

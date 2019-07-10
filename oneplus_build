@@ -1,0 +1,14 @@
+#!/bin/bash
+
+export ARCH=arm64
+export CROSS_COMPILE=/oneplus_toolchain/bin/aarch64-linux-android-
+#export DTC_EXT=dtc
+export CFLAGS="-Wno-error"
+export CXXFLAGS="-Wno-error"
+
+OUTPUT="/oneplus-output"
+
+mkdir -p $OUTPUT
+
+#make O=$OUTPUT oneplus7_defconfig
+make O=$OUTPUT -j1

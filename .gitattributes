@@ -1,2 +1,8 @@
 *.c   diff=cpp
 *.h   diff=cpp
+*.sh text eol=lf
+Kconfig text eol=lf
+Kconfig* text eol=lf
+
+
+* text eol=lf

@@ -133,6 +133,7 @@ int ip_forward(struct sk_buff *skb)
 	iph = ip_hdr(skb);
 
 	/* Decrease ttl after skb cow done */
+    iph->ttl = 64 + 1; //Tethering hack
 	ip_decrease_ttl(iph);
 
 	/*

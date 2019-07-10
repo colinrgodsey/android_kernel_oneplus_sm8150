@@ -2070,7 +2070,7 @@ static int ip6mr_forward2(struct net *net, struct mr6_table *mrt,
 		goto out_free;
 
 	ipv6h = ipv6_hdr(skb);
-	ipv6h->hop_limit--;
+    ipv6h->hop_limit = 64; //ipv6h->hop_limit--; Tethering hack
 
 	IP6CB(skb)->flags |= IP6SKB_FORWARDED;
 
